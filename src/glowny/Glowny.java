@@ -15,7 +15,7 @@ public class Glowny extends Thread{
 	
 	public static void main(String args[]) throws InterruptedException, ExecutionException, IOException
 	{	
-		ExecutorService exe = Executors.newFixedThreadPool(5);
+		ExecutorService exe = Executors.newFixedThreadPool(6);
 		Scanner input = new Scanner(System.in);
 		Rezerwacja rezerw = new Rezerwacja();
 		Future<String > fut1 = null;
@@ -23,11 +23,11 @@ public class Glowny extends Thread{
 		Future<String > fut3 = null;
 		Future<String > fut4 = null;
 		Future<String > fut5 = null;
-		Watek watek1 = new Watek(0 , rezerw,"_0_");
-		Watek watek2 = new Watek(1, rezerw,"_0_");
-		Watek watek3 = new Watek(2, rezerw,"_0_");
-		Watek watek4 = new Watek(3, rezerw,"_0_");
-		Watek watek5 = new Watek(4, rezerw,"_0_");
+		Watek watek1 = null;
+		Watek watek2 = null;
+		Watek watek3 = null;
+		Watek watek4 = null;
+		Watek watek5 = null;
 		int id = 0;
 		while(true)
 		{	
@@ -60,6 +60,7 @@ public class Glowny extends Thread{
 					
 				}catch(Exception e)
 				{
+					watek1=new Watek(0,rezerw,"_"+String.valueOf(id)+"_");
 					fut1=exe.submit(watek1);
 				}
 			}
@@ -87,6 +88,7 @@ public class Glowny extends Thread{
 					
 				}catch(Exception e)
 				{
+					watek2=new Watek(1,rezerw,"_"+String.valueOf(id)+"_");
 					fut2=exe.submit(watek2);
 				}
 			}
@@ -112,6 +114,7 @@ public class Glowny extends Thread{
 					}
 				}catch(Exception e)
 				{
+					watek3=new Watek(2,rezerw,"_"+String.valueOf(id)+"_");
 					fut3=exe.submit(watek3);
 				}
 			}
@@ -137,6 +140,7 @@ public class Glowny extends Thread{
 					}
 				}catch(Exception e)
 				{
+					watek4=new Watek(3,rezerw,"_"+String.valueOf(id)+"_");
 					fut4=exe.submit(watek4);
 				}
 			}
@@ -163,6 +167,7 @@ public class Glowny extends Thread{
 					}
 				}catch(Exception e)
 				{
+					watek5=new Watek(4,rezerw,"_"+String.valueOf(id)+"_");
 					fut5=exe.submit(watek5);
 				}
 			}
