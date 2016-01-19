@@ -19,13 +19,14 @@ public class Watek implements Callable<String> {
 	@Override
 	public String call() throws Exception {
 	
-		
+		//System.err.println(" Watek:"+id_watku+" rozpoczyna prace");
 		if(rezerwacja.rezerwuj_bilet(indeks_rezerwacji ,id_watku))
 		{
 			
 		}
 		else
 		{
+			//System.err.println(" Watek:"+id_watku+" nie moze zarezerwowac biletu");
 			return "nie zarezerwowalem";
 		}
 		while(!odwolaj_rezerwacje)

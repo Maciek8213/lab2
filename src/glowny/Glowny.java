@@ -171,6 +171,16 @@ public class Glowny extends Thread{
 					fut5=exe.submit(watek5);
 				}
 			}
+			
+// Komentarz do testów by sprawdziæ ¿e w¹tki nie mog¹ zarezerwowaæ jednoczeœnie danego miejsca			
+//			else if(komenda.equals("7"))
+//			{
+//			
+//				fut4=exe.submit(new Watek(4,rezerw,"_"+String.valueOf(id)+"_"));
+//				fut4=exe.submit(new Watek(4,rezerw,"_"+String.valueOf(id+1)+"_"));
+//			
+//			}
+			
 		}
 	}
 
