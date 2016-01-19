@@ -52,11 +52,12 @@ public class Glowny extends Thread{
 							watek1=new Watek(0,rezerw,"_"+String.valueOf(id)+"_");
 							fut1=exe.submit(watek1);
 						}
+						else
+						{
+							exe.submit(new Watek(0,rezerw,"_"+String.valueOf(id)+"_"));
+						}
 					}
-					else
-					{
-						exe.submit(new Watek(0,rezerw,"_"+String.valueOf(id)+"_"));
-					}
+					
 				}catch(Exception e)
 				{
 					fut1=exe.submit(watek1);
@@ -78,11 +79,12 @@ public class Glowny extends Thread{
 							watek2=new Watek(1,rezerw,"_"+String.valueOf(id)+"_");
 							fut2=exe.submit(watek2);
 						}
+						else
+						{
+							exe.submit(new Watek(1,rezerw,"_"+String.valueOf(id)+"_"));
+						}
 					}
-					else
-					{
-						exe.submit(new Watek(1,rezerw,"_"+String.valueOf(id)+"_"));
-					}
+					
 				}catch(Exception e)
 				{
 					fut2=exe.submit(watek2);

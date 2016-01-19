@@ -31,10 +31,10 @@ public class Watek implements Callable<String> {
 		while(!odwolaj_rezerwacje)
 		{
 			Thread.sleep(3000);
-			System.err.println(" Watek:"+id_watku+" ma bilet"+indeks_rezerwacji);
+			//System.err.println(" Watek:"+id_watku+" ma bilet"+indeks_rezerwacji);
 		}
 		rezerwacja.odwolaj_rezerwacje(indeks_rezerwacji);
-		System.err.println(" Watek:"+id_watku+" odwolal bilet"+indeks_rezerwacji);
+		//System.err.println(" Watek:"+id_watku+" odwolal bilet"+indeks_rezerwacji);
 		return "oddalem bilet";
 	}
 
