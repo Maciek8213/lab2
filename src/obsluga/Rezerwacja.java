@@ -29,7 +29,7 @@ public class Rezerwacja {
 		
 	}
 	
-	public synchronized void rezerwuj_bilet(int i, String id_watku)
+	public synchronized boolean rezerwuj_bilet(int i, String id_watku)
 	{
 		this.id_watku=id_watku;
 			if(bilety.get(i).getDostepny().equals("dostepny"))
@@ -37,8 +37,10 @@ public class Rezerwacja {
 				bilety.get(i).setDostepny("nie dostepny");
 				bilety.get(i).setIdWatku(id_watku);
 				System.out.println("Zarezerwowano bilet "+bilety.get(i).trasa);
+				return true;
 			}else
 				System.out.println("Przyrko mi bilet nie dostepny");
+				return false;
 	}
 	
 	public void odwolaj_rezerwacje(int i)

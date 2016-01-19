@@ -53,6 +53,10 @@ public class Glowny extends Thread{
 							fut1=exe.submit(watek1);
 						}
 					}
+					else
+					{
+						exe.submit(new Watek(0,rezerw,"_"+String.valueOf(id)+"_"));
+					}
 				}catch(Exception e)
 				{
 					fut1=exe.submit(watek1);
@@ -75,6 +79,10 @@ public class Glowny extends Thread{
 							fut2=exe.submit(watek2);
 						}
 					}
+					else
+					{
+						exe.submit(new Watek(1,rezerw,"_"+String.valueOf(id)+"_"));
+					}
 				}catch(Exception e)
 				{
 					fut2=exe.submit(watek2);
@@ -94,6 +102,10 @@ public class Glowny extends Thread{
 							while(!fut3.isDone()){Thread.sleep(1);}
 							watek3=new Watek(2,rezerw,"_"+String.valueOf(id)+"_");
 							fut3=exe.submit(watek3);
+						}
+						else
+						{
+							exe.submit(new Watek(2,rezerw,"_"+String.valueOf(id)+"_"));
 						}
 					}
 				}catch(Exception e)
@@ -115,6 +127,10 @@ public class Glowny extends Thread{
 							while(!fut4.isDone()){Thread.sleep(1);}
 							watek4=new Watek(3,rezerw,"_"+String.valueOf(id)+"_");
 							fut4=exe.submit(watek4);
+						}
+						else
+						{
+							exe.submit(new Watek(3,rezerw,"_"+String.valueOf(id)+"_"));
 						}
 					}
 				}catch(Exception e)
@@ -138,14 +154,16 @@ public class Glowny extends Thread{
 							watek5=new Watek(4,rezerw,"_"+String.valueOf(id)+"_");
 							fut5=exe.submit(watek5);
 						}
+						else
+						{
+							exe.submit(new Watek(4,rezerw,"_"+String.valueOf(id)+"_"));
+						}
 					}
 				}catch(Exception e)
 				{
 					fut5=exe.submit(watek5);
 				}
 			}
-	
-	
 		}
 	}
 
@@ -157,4 +175,5 @@ public class Glowny extends Thread{
 		System.out.println(rezerw.getBilety(i));
 		
 	}
+
 }
